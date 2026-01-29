@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Expense Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+  <h2>💸 Expense Tracker</h2>
+  <div class="top-right">
+    <div class="switch" id="themeToggle"></div>
+    <div class="notify-btn" id="notifyBtn">🔔
+      <span class="notify-count" id="notifyCount">0</span>
+    </div>
+  </div>
+</header>
+
+<div id="overlay"></div>
+
+<div id="notifyPanel">
+  <div class="notify-header">
+    <strong>Notifications</strong>
+    <button onclick="closeNotify()">✕</button>
+  </div>
+  <ul id="notifyList"></ul>
+</div>
+
+<div id="toast"></div>
+
+<div class="container">
+  <div class="card">
+    <h1 id="balance">₹0</h1>
+
+    <div class="stats">
+      <div class="stat income"><span>Income</span><strong>₹<span id="income">0</span></strong></div>
+      <div class="stat expense"><span>Expense</span><strong>₹<span id="expense">0</span></strong></div>
+      <div class="stat savings"><span>Savings</span><strong>₹<span id="savings">0</span></strong></div>
+    </div>
+
+    <div class="bar"><div id="barFill"></div></div>
+
+    <input id="name" placeholder="Income / Expense name">
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+    <input id="amount" type="number" placeholder="Amount">
+    <input id="limit" type="number" placeholder="Daily Budget">
+    <button class="budget-btn" onclick="setBudget()">Set Budget</button>
+
+    <button class="add" onclick="addTransaction()">Add Transaction</button>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Total</th><th></th></tr>
+      </thead>
+      <tbody id="list"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
